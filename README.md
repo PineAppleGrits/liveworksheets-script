@@ -5,9 +5,9 @@ Script to get the answer into liveworksheets excercises
 ### Scripts
 ```js
 function rtas(contenidojson) {
-    var c = contenidojson.split('["');
+    var c = JSON.parse(contenidojson)
     for (let i = 0; i < c.length; i++) {
-        var r = c[i].split('\"')[0]
+        var r = c[i][0]
         if (r.includes('/')) {
             r = r.replace('choose:', '')
             if (r.includes('/*')) {
